@@ -43,7 +43,8 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    gap: 1.5em;
+    justify-content: center;
     align-items: center;
     padding: 15px 20px;
     background-color: white; /* Adjust as needed */
@@ -52,15 +53,38 @@ header {
     top: 0;
     z-index: 1000;
 }
+.header-container {
+    max-width: 1200px;
+    display: flex;
+    width: 100%;
+    gap: 1.5em;
+    align-items: center;
+}
 
 .logo img {
     width: 150px; /* Adjust size as per design */
     height: auto;
 }
 
-.phone-icon img {
+.phone-icon {
     width: 25px;
     height: auto;
+}
+.phone-text {
+    display: none;
+}
+
+.navigation {
+    display: none;
+}
+.menu-container {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+    justify-content: flex-end;
+}
+.menu-container>a {
+    color: black;
 }
 
 .navigation ul {
@@ -173,6 +197,7 @@ justify-content: center;
 .proposition-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1em;
 }
 .proposition {
@@ -195,6 +220,7 @@ section {
     font-size: 1.4em;
     font-weight: bold;
     line-height: 1.5em;
+    padding: .5em;
 }
 
 .image-container {
@@ -208,6 +234,7 @@ section {
     border-radius: 8px;
     padding: 1em;
     margin-top: -16px;
+    box-shadow: 0px 6px 8px hsla(0, 0%, 0%, .5);
 }
 
 .why-rent>.section-text>a {
@@ -240,6 +267,8 @@ section {
     grid-template-rows: repeat(3, auto); /* Three rows */
     align-items: center;
     justify-items: center;
+    max-width: 800px;  
+    margin: 0 auto;
 }
 
 .step-number {
@@ -275,6 +304,8 @@ section {
     color: #333;
     grid-column: 4; /* Place in the third column */
     grid-row: 3; /* Span the last two rows */
+    width: 100%;
+    text-align: left;
 }
 .invisible {
     position: absolute; /* Absolutely position the period */
@@ -314,9 +345,7 @@ section {
     width: 100%; /* Ensure the image doesn't grow larger than others */
 }
 
-.phone-icon {
-    width: 32px;
-}
+
 
 .call-to-action {
     display: flex;
@@ -335,7 +364,7 @@ section {
     gap: .75em;
 }
 .btn>img {
-    width: 24px;
+    width: 20px;
 }
 .cta-content>a {
     color: black;
@@ -348,10 +377,17 @@ section {
 .call-to-action>h2 {
     font-size: xx-large;
 }
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .footer-content {
-    margin: 1em;
+    margin: 2em 1.5em;
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
 }
 .footer-right ul {
     text-align: right;
@@ -372,15 +408,58 @@ footer>p {
 }
 
 /* Mobile Styling */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+    .menu-container {
+        width: 100%;
+        display: flex;
+        gap: 1em;
+        justify-content: space-between;
+        padding-top: 16px;
+    }
+    .menu-container>.phone-icon {
+        display: none;
+    }
     .navigation {
-        display: none; /* Hide navigation by default */
+        display: block;
     }
 
     .hamburger-menu {
+        display: none;
+    }
+
+    .hero {
+        align-items: center;
+        text-align: center;
+    }
+    .phone-icon {
+        display: none;
+    }
+    .phone-text {
         display: block;
     }
+
+    
+    .equipment-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .equipment-item {
+        max-width: 1000px;
+    }
+    .proposition-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    
+
 }
+
+
 
 /* Optional - If you want to toggle navigation on mobile */
 .nav-open .navigation {
