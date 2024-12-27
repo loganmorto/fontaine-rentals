@@ -442,6 +442,10 @@ footer>p {
         display: block;
     }
 
+    .section-text {
+        align-items: center;
+    }
+
     
     .equipment-list {
         display: grid;
@@ -455,8 +459,17 @@ footer>p {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .brands {
+    align-items: center;
+    }
+    .brand-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2em;
+    }
 
-    
+
 
 }
 
